@@ -23,3 +23,9 @@ a {
 	+translateZ(0)
 	width: 200px
 }
+
+body{
+	background-image: url("bullfight-389342_960_720.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
