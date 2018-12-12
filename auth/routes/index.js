@@ -28,6 +28,15 @@ router.get('/user', function(req, res){
       res.redirect('/login');
     }
 });
+router.get('/game', function(req, res){
+    console.log("/game Route");
+    if (req.session.user) {
+      res.render('user', {msg:req.session.msg});
+    } else {
+      req.session.msg = 'Access denied!';
+      res.redirect('/login');
+    }
+});
 router.get('/signup', function(req, res){
     console.log("/signup Route");
     if(req.session.user){
