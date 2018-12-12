@@ -113,7 +113,7 @@ exports.deleteUser = function(req, res){
 
 exports.updateHighScore = function(req, res){
   console.log('setting high score');
-  console.log('request: ' + req);
+  console.log('request: ' + req.body.high_score);
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
     user.set('high_score', req.body.high_score);
