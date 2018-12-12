@@ -60,6 +60,7 @@ router.get('/logout', function(req, res){
     });
   });
 router.post('/signup', users.signup);
+router.post('/user/updateHighScore', users.updateHighScore);
 router.post('/user/update', users.updateUser);
 router.post('/user/delete', users.deleteUser);
 router.post('/login', users.login);
