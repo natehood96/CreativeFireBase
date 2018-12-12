@@ -117,13 +117,18 @@ exports.updateHighScore = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
     user.set('high_score', req.body.high_score);
+    // user.set('high_score', user.high_score + 1);
     console.log('new high score: ' + user.high_score);
+    // console.log('new high score: ' + user.high_score + 1);
+
     user.save(function(err) {
       if (err){
         res.sessor.error = err;
       } else {
         req.session.msg = 'User Updated.';
+        
         req.session.high_score = req.body.high_score;
+        // req.session.high_score = user.high_score + 1;
       }
       res.redirect('/'); //should we change this?
     });
