@@ -15,6 +15,7 @@ router.get('/', function(req, res){
                            color:req.session.color,
                            screen_name:req.session.screen_name,
                            high_score:req.session.high_score});
+      console.log("new high score rendered: " + req.session.high_score);
     } else {
       console.log("/ Route else user");
       req.session.msg = 'Access denied!';
