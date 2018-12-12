@@ -75,12 +75,14 @@ exports.updateUser = function(req, res){
   .exec(function(err, user) {
     user.set('email', req.body.email);
     user.set('color', req.body.color);
+    user.set('screen_name', req.body.screen_name);
     user.save(function(err) {
       if (err){
         res.sessor.error = err;
       } else {
         req.session.msg = 'User Updated.';
         req.session.color = req.body.color;
+        req.session.screen_name = req.body.screen_name;
       }
       res.redirect('/user');
     });
