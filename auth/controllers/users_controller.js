@@ -15,6 +15,8 @@ exports.signup = function(req, res){
   console.log("after email user exports.signup");
   user.set('screen_name', req.body.screen_name);
   console.log("after screen_name user exports.singup");
+  user.set('high_score', 1);
+  console.log("setting high score to 1");
   // DO THE SAME FOR HIGH SCORE THAT WE DID FOR SCREEN_NAME
   
   user.save(function(err) {
