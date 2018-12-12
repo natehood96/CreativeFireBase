@@ -5,6 +5,9 @@
     <title>User Login and Sessions</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/litera.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <script
+      src="http://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
 
 </head>
 
@@ -61,8 +64,12 @@
         <br><br><br>
         <!--<img src="smiley.gif" alt="Smiley face" height="42" width="42">-->
         <img height="540" width="350" alt="John Cena" src="http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-John-Cena-PNG-Transparent-Image-1-500x750.png">
-        
         <br><br><br>
+
+        <p>JOHN CENA TIMER</p>
+        <button id="startFightButton" type="button" onclick="activateTimer()">START EPIC BATTLE</button>
+        <p id="timer"></p>
+
         <!--test for editing the high score-->
         <div class="form-container">
         <h2>
@@ -89,6 +96,29 @@
     <!--  </span>-->
     <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
     <script src="/javascripts/my_app.js"></script>
+
+
+<script>
+function activateTimer() {
+  $('#startFightButton').remove();
+    // Set the date we're counting down to
+var timeRemaining = 30;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Display the result in the element with id="timer"
+  document.getElementById("timer").innerHTML = timeRemaining
+timeRemaining -= 1;
+  // If the count down is finished, write some text 
+  if (timeRemaining < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "TIME'S UP SUCKA";
+  }
+}, 1000);
+}
+</script>
+
 </body>
 
 </html>
