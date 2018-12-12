@@ -5,25 +5,25 @@
     <title>User Login and Sessions</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/litera.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id = "navSpacing">
-  <a class="navbar-brand" href="">Welcome</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navSpacing">
+    <a class="navbar-brand" href="">Welcome</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarColor03">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/user">Edit</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/logout">Logout</a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarColor03">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/user">Edit</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
 <body>
@@ -44,50 +44,72 @@
                         <div class="card-body">
                             Your screen name is
                             <%= screen_name %>
-                            Your high score is
-                            <%= high_score %> <br>
+                                Your high score is
+                                <%= high_score %> <br>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--<button ng-click="count = count + 1" ng-init="count=0">-->
-        <!--  Increment-->
-        <!--</button>-->
-        <button ng-click="high_score = high_score + 1">
-          Increment
-        </button>
-        <br><br><br>
-        <!--<img src="smiley.gif" alt="Smiley face" height="42" width="42">-->
-        <img height="540" width="350" alt="John Cena" src="http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-John-Cena-PNG-Transparent-Image-1-500x750.png">
         
-        <br><br><br>
-        <!--test for editing the high score-->
-        <div class="form-container">
-        <h2>
-            <p class="form-header">Edit High Score</p>
-        </h2>
-        <form method="POST" action="/user/updateHighScore">
-            <h5>
-            <label>High Score:</label>
-            <input type="number" id="high_score" name="high_score"><br>
-            <button type="submit" id="submit" class="btn btn-outline-success">Submit</button>
-            </h5>
-        </form>
-    </div>
+                <script>
+                    $(document).ready(function() {
+                        $("#punch_id").click(function(event) {
+                            event.preventDefault();
+                        });
+                    });
+                </script>
 
-    </div>
-    <!--<hr>-->
-    <!--<span id="indexMsg">-->
-    <!--    <%= msg %>-->
-    <!--</span>-->
-    <!--<hr>-->
-    <!--<span id="colorText">-->
-    <!--Color-->
-    <!--    <%= color %>-->
-    <!--  </span>-->
-    <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
-    <script src="/javascripts/my_app.js"></script>
+
+                <div ng-app="myApp" ng-controller="myController">
+                    <div>
+                        <button class="btn btn-xs btn-info pull-right" ng-click="user.high_score = user.high_score+1" ng-model="user.high_score">
+                            Punch
+                        </button>
+                    <div>
+
+                    <!--Name: <input ng-model="user.high_score">-->
+
+                    <h1># of hits {{user.high_score}}</h1>
+
+
+
+                    <!--<form action="/user/updateHighScore" method="get" target="_blank">-->
+                    <!--    <button class="btn btn-xs btn-info pull-right" type="submit" id='punch_id' formmethod="post">PUNCH</button>-->
+                    <!--</form>-->
+                    <br><br><br>
+                    <!--<img src="smiley.gif" alt="Smiley face" height="42" width="42">-->
+                    <img height="540" width="350" alt="John Cena" src="http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-John-Cena-PNG-Transparent-Image-1-500x750.png">
+
+                    <br><br><br>
+                    <!--test for editing the high score-->
+                    <div class="form-container">
+                        <h2>
+                            <p class="form-header">Edit High Score</p>
+                        </h2>
+                        <form method="POST" action="/user/updateHighScore">
+                            <h5>
+                                <label>High Score:</label>
+                                <input type="number" id="high_score" name="high_score" value= {{user.high_score}}><br>
+                                <button type="submit" id="submit" class="btn btn-outline-success">Submit</button>
+                            </h5>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--<hr>-->
+            <!--<span id="indexMsg">-->
+            <!--    <%= msg %>-->
+            <!--</span>-->
+            <!--<hr>-->
+            <!--<span id="colorText">-->
+            <!--Color-->
+            <!--    <%= color %>-->
+            <!--  </span>-->
+            <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+            <script src="/javascripts/my_app.js"></script>
 </body>
 
 </html>

@@ -10,4 +10,9 @@ angular.module('myApp', []).
       $scope.user = {};
       $scope.error = data;
     });
+   
+    
+//     vote: function(id) {
+//     return $http.get('/api/todos/' + id + '/vote');
+// }
   }]);

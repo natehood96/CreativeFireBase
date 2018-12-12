@@ -30,15 +30,15 @@ router.get('/user', function(req, res){
       res.redirect('/login');
     }
 });
-router.get('/game', function(req, res){
-    console.log("/game Route");
-    if (req.session.user) {
-      res.render('user', {msg:req.session.msg});
-    } else {
-      req.session.msg = 'Access denied!';
-      res.redirect('/login');
-    }
-});
+// router.get('/game', function(req, res){
+//     console.log("/game Route");
+//     if (req.session.user) {
+//       res.render('user', {msg:req.session.msg});
+//     } else {
+//       req.session.msg = 'Access denied!';
+//       res.redirect('/login');
+//     }
+// });
 router.get('/signup', function(req, res){
     console.log("/signup Route");
     if(req.session.user){
@@ -59,6 +59,11 @@ router.get('/logout', function(req, res){
       res.redirect('/login');
     });
   });
+// router.get('/user/updateHighScore/:router_id/increment', function(req, res){
+//   router.update({_id: req.params.router_id}, { $inc: {high_score: 1} } ),
+// function(err,doc){
+// }})
+
 router.post('/signup', users.signup);
 router.post('/user/updateHighScore', users.updateHighScore);
 router.post('/user/update', users.updateUser);
