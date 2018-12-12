@@ -117,34 +117,10 @@
             <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
             <script src="/javascripts/my_app.js"></script>
 
-        <!--<button ng-click="count = count + 1" ng-init="count=0">-->
-        <!--  Increment-->
-        <!--</button>-->
-        <button ng-click="high_score = high_score + 1">
-          Increment
-        </button>
-        <br><br><br>
-        <!--<img src="smiley.gif" alt="Smiley face" height="42" width="42">-->
-        <img height="540" width="350" alt="John Cena" src="http://www.pngpix.com/wp-content/uploads/2016/10/PNGPIX-COM-John-Cena-PNG-Transparent-Image-1-500x750.png">
-        <br><br><br>
 
         <p>JOHN CENA TIMER</p>
         <button id="startFightButton" type="button" onclick="activateTimer()">START EPIC BATTLE</button>
         <p id="timer"></p>
-
-        <!--test for editing the high score-->
-        <div class="form-container">
-        <h2>
-            <p class="form-header">Edit High Score</p>
-        </h2>
-        <form method="POST" action="/user/updateHighScore">
-            <h5>
-            <label>High Score:</label>
-            <input type="number" id="high_score" name="high_score"><br>
-            <button type="submit" id="submit" class="btn btn-outline-success">Submit</button>
-            </h5>
-        </form>
-    </div>
 
     </div>
     <!--<hr>-->
