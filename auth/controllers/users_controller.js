@@ -13,6 +13,10 @@ exports.signup = function(req, res){
   console.log("after hashing user exports.signup");
   user.set('email', req.body.email);
   console.log("after email user exports.signup");
+  user.set('screen_name', req.body.screen_name);
+  console.log("after screen_name user exports.singup");
+  // DO THE SAME FOR HIGH SCORE THAT WE DID FOR SCREEN_NAME
+  
   user.save(function(err) {
     console.log("In exports.signup");
     console.log(err);
@@ -22,6 +26,7 @@ exports.signup = function(req, res){
     } else {
       req.session.user = user.id;
       req.session.username = user.username;
+      req.session.screen_name = user.screen_name;
       req.session.msg = 'Authenticated as ' + user.username;
       res.redirect('/');
     }
