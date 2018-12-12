@@ -65,7 +65,7 @@ exports.getUserProfile = function(req, res) {
     if (!user){
       res.json(404, {err: 'User Not Found.'});
     } else {
-      //console.log("logging user: " + user);
+      console.log("logging user: " + user);
       res.json(user);
     }
   });
