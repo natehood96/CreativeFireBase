@@ -50,12 +50,27 @@
                         <div class="card-body">
                             Your screen name is
                             <%= screen_name %>
+                            You high score is
+                            <% high_score %>
                                 <!--<img src="{{product.PicUrl}}">-->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!--test for editing the high score-->
+        <div class="form-container">
+        <h2>
+            <p class="form-header">Edit High Score</p>
+        </h2>
+        <form method="POST" action="/user/updateHighScore">
+            <h5>
+            <label>High Score:</label>
+            <input type="number" id="high_score" name="high_score"><br>
+            <button type="submit" id="submit" class="btn btn-outline-success">Submit</button>
+            </h5>
+        </form>
+    </div>
 
     </div>
     <!--<hr>-->

@@ -13,7 +13,8 @@ router.get('/', function(req, res){
       res.render('index', {username: req.session.username,
                            msg:req.session.msg,
                            color:req.session.color,
-                           screen_name:req.session.screen_name});
+                           screen_name:req.session.screen_name,
+                           high_score:req.session.high_score});
     } else {
       console.log("/ Route else user");
       req.session.msg = 'Access denied!';
@@ -59,6 +60,7 @@ router.get('/logout', function(req, res){
     });
   });
 router.post('/signup', users.signup);
+router.post('/user/updateHighScore', users.updateHighScore);
 router.post('/user/update', users.updateUser);
 router.post('/user/delete', users.deleteUser);
 router.post('/login', users.login);
