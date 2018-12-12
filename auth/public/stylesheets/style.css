@@ -10,16 +10,12 @@ a {
   margin-top: 10px;
 }
 
-#timer{
-	box-shadow: 0 10px 5px -5px rgba(#000, 0.2)
-	height: 300px
-	left: 50%
-	line-height: 300px
-	margin: -(300px / 2) 0 0 -(200px / 2)
-	+perspective(500px)
-	position: absolute
-	text-align: center
-	top: 50%
-	+translateZ(0)
-	width: 200px
+#interface {
+	float: right;
+	margin-bottom: 600px;
+	margin-right: 100px;
+}
+
+#johncena {
+	float: left;
 }
