@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>User Login and Sessions</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/litera.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id = "navSpacing">
+  <a class="navbar-brand" href="#">Welcome</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/user">Edit</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<body>
+    <div ng-controller="myController" id="default-css">
+        <h2 id="welcomeText">Welcome. You are Logged In as
+            <%= username %>
+        </h2>
+
+        <hr>
+
+        <div class="container space">
+            <div class="row">
+                <div class="col-sm-3 col-6">
+                    <div class="card border-info mb-3" style="max-width: 20rem;">
+                        <div style="margin: center;" class="card-header">
+                            <%= msg %>
+                        </div>
+                        <div class="card-body">
+                            Your favorite color is
+                            <%= color %>
+                                <!--<img src="{{product.PicUrl}}">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--<hr>-->
+    <!--<span id="indexMsg">-->
+    <!--    <%= msg %>-->
+    <!--</span>-->
+    <!--<hr>-->
+    <!--<span id="colorText">-->
+    <!--Color-->
+    <!--    <%= color %>-->
+    <!--  </span>-->
+    <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+    <script src="/javascripts/my_app.js"></script>
+</body>
+
+</html>

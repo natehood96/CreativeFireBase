@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    
+<head>
+    <title>User Login and Sessions</title>    
+    <link rel="stylesheet" type="text/css" href="/stylesheets/litera.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+</head>
+        
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id = "navSpacing">
+  <a class="navbar-brand" href="#">Welcome</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+        
+<body>  
+    <div class="form-container">
+        <h2>
+        <p class="form-header">Login</p>
+        </h2>
+        <form method="POST" action="/login">
+            <h5>
+            <label>Username:</label>
+            <input type="text" id="username" name="username"><br>
+            <label>Password:</label>
+            <input type="password" id="password" name="password"><br>
+            <button type="submit" id="login" class="btn btn-outline-success">Login</button>
+
+            </h5>
+        </form>
+    </div>
+    <a id="signUpLink" href="/signup"><button type="submit" class="btn btn-outline-success">Sign up</button></a>
+    <hr>
+    <span id="loginMsg">
+    <%= msg %>
+    </span>
+</body>
+        
+</html>
