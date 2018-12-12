@@ -15,6 +15,8 @@ exports.signup = function(req, res){
   console.log("after email user exports.signup");
   user.set('screen_name', req.body.screen_name);
   console.log("after screen_name user exports.singup");
+  // user.set('high_score', 1);
+  console.log("setting high score to 1");
   // DO THE SAME FOR HIGH SCORE THAT WE DID FOR SCREEN_NAME
   
   user.save(function(err) {
@@ -65,7 +67,7 @@ exports.getUserProfile = function(req, res) {
     if (!user){
       res.json(404, {err: 'User Not Found.'});
     } else {
-      //console.log("logging user: " + user);
+      console.log("logging user: " + user);
       res.json(user);
     }
   });
@@ -115,6 +117,7 @@ exports.updateHighScore = function(req, res){
   User.findOne({ _id: req.session.user })
   .exec(function(err, user) {
     user.set('high_score', req.body.high_score);
+    console.log('new high score: ' + user.high_score);
     user.save(function(err) {
       if (err){
         res.sessor.error = err;

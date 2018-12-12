@@ -6,6 +6,6 @@ var UserSchema = new Schema({
     email: String,
     color: String,
     hashed_password: String,
-    high_score: {type: Number, default:0}
+    high_score: {type: Number, default:1}
 });
 mongoose.model('User', UserSchema);
