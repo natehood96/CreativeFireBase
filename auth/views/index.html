@@ -118,7 +118,7 @@
     
     <div id='interface'>
         <p id='epicText'>JOHN CENA TIMER</p>
-        <button id="startFightButton" type="button" onclick="activateTimer()">START EPIC BATTLE</button>
+        <button id="startFightButton" type="button" class="btn btn-outline-success" onclick="activateTimer()">START EPIC BATTLE</button>
         <p id="timer"></p>
         <div id='punchButton'></div>
     <div class="form-container">
@@ -147,7 +147,7 @@ function activateTimer() {
   currentScore = 0;
   document.getElementById('scoreboard').innerHTML = '# of hits ' + currentScore;
   $('#startFightButton').remove();
-  var everything = '<button id=\'punchButton\' onclick="punchJohnCena()">PUNCH</div>';
+  var everything = '<button id=\'punchButton\' class="btn btn-outline-success" onclick="punchJohnCena()">PUNCH</div>';
   $('#punchButton').html(everything);
     // Set the date we're counting down to
 var timeRemaining = 15;
